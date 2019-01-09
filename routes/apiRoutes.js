@@ -33,9 +33,9 @@ router.post("/api/notes", (req, res, next) => {
 });
 
 // Deletes inserted data from notepad_db, by id
-router.delete("/api/notes", (req, res, next) => {
-
-    connection.query("DELETE FROM notepad WHERE id = 16", function (err, result) {
+router.delete("/api/notes/:id", (req, res, next) => {
+    console.log(req.params.id)
+    connection.query("DELETE FROM notepad WHERE id = ?", [req.params.id], function (err, result) {
         if (err) {
             throw err;
             console.log(err);
