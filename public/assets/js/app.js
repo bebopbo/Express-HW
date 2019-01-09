@@ -30,6 +30,8 @@ const handleSubmitBtn = event => {
         $("#nText").val("");
     })
 
+    noteDataQuery();
+
 
 }
 
